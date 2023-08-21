@@ -79,7 +79,7 @@ export default function App() {
             padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
             level={3}
           >
-            Enter Information
+            Enter Information ConfirmSignIn
           </Heading>
         );
       },
@@ -132,7 +132,7 @@ export default function App() {
             padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
             level={3}
           >
-            Enter Information
+            Enter Information ConfirmSignUp
           </Heading>
         );
       },
