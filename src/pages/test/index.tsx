@@ -1,5 +1,4 @@
 import "@aws-amplify/ui-react/styles.css";
-
 import { Amplify } from "aws-amplify";
 import {
   Authenticator,
@@ -17,11 +16,12 @@ import {
 } from "@aws-amplify/ui-react";
 import { I18n } from "aws-amplify";
 import { translations } from "@aws-amplify/ui-react";
-I18n.putVocabularies(translations);
-I18n.setLanguage("ja");
 
 import awsExports from "../../aws-exports";
 Amplify.configure(awsExports);
+
+I18n.putVocabularies(translations);
+I18n.setLanguage("ja");
 
 export default function App() {
   const { tokens } = useTheme();
@@ -58,7 +58,10 @@ export default function App() {
       Footer: () => {
         const { toResetPassword } = useAuthenticator();
         return (
-          <View textAlign="center" padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}>
+          <View
+            textAlign="center"
+            padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}
+          >
             <Button
               fontWeight="normal"
               onClick={toResetPassword}
@@ -72,40 +75,20 @@ export default function App() {
         );
       },
     },
-    ConfirmSignIn: {
-      Header: () => {
-        return (
-          <Heading
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-            level={3}
-          >
-            Enter Information ConfirmSignIn
-          </Heading>
-        );
-      },
-    },
     SignUp: {
       Header: () => {
         return (
-          <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
-            Quack Training Noteのアカウントを作成します
-          </Text>
-        );
-      },
-      Footer: () => {
-        const { toSignIn } = useAuthenticator();
-        return (
-          <View textAlign="center" padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}>
-            <Button
-              fontWeight="normal"
-              onClick={toSignIn}
-              size="small"
-              variation="link"
-              isFullWidth={true}
-            >
-              サインインへ戻る
-            </Button>
-          </View>
+          <>
+            <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
+              Quack Training Noteのアカウントを作成します
+            </Text>
+            <Text padding={`0 0 0 ${tokens.space.xl}`}>
+              <Link fontWeight={tokens.borderWidths.large} href="#">
+                利用規約
+              </Link>
+              をお読みください
+            </Text>
+          </>
         );
       },
       FormFields: () => {
@@ -113,7 +96,6 @@ export default function App() {
         return (
           <>
             <Authenticator.SignUp.FormFields />
-            <Link href="#">利用規約</Link>
             <CheckboxField
               errorMessage={validationErrors.acknowledgement as string}
               hasError={!!validationErrors.acknowledgement}
@@ -132,8 +114,27 @@ export default function App() {
             padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
             level={3}
           >
-            Enter Information ConfirmSignUp
+            メールアドレス認証
           </Heading>
+        );
+      },
+      Footer: () => {
+        const { toSignUp } = useAuthenticator();
+        return (
+          <View
+            textAlign="center"
+            padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}
+          >
+            <Button
+              fontWeight="normal"
+              onClick={toSignUp}
+              size="small"
+              variation="link"
+              isFullWidth={true}
+            >
+              アカウント作成へ戻る
+            </Button>
+          </View>
         );
       },
     },
@@ -296,7 +297,7 @@ export default function App() {
             value: tokens.colors.teal["10"].value,
           },
           secondary: {
-            value: tokens.colors.teal["80"].value,
+            value: tokens.colors.blue["40"].value,
           },
         },
         font: {
