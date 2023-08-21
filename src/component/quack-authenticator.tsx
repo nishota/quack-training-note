@@ -3,7 +3,6 @@ import { Amplify } from "aws-amplify";
 import {
   Authenticator,
   View,
-  Image,
   Text,
   Link,
   Heading,
@@ -16,34 +15,36 @@ import {
 } from "@aws-amplify/ui-react";
 import { I18n } from "aws-amplify";
 import { translations } from "@aws-amplify/ui-react";
+import QuackCopyright from "./quack-copyright";
+import QuackLogo from "./quack-logo";
 
-import awsExports from "../../aws-exports";
+import awsExports from "../aws-exports";
 Amplify.configure(awsExports);
 
 I18n.putVocabularies(translations);
 I18n.setLanguage("ja");
 
-export default function App() {
+import { ReactNode } from "react";
+
+type SignProps = {
+  children: ReactNode
+}
+
+export default function QuackAuthenticator({children}: SignProps) {
   const { tokens } = useTheme();
 
   const components = {
     Header: () => {
       return (
         <View textAlign="center" padding={tokens.space.large}>
-          <Image
-            alt="Quack logo"
-            src="https://docs.amplify.aws/assets/logo-dark.svg"
-          />
+          <QuackLogo width={200} height={50} />
         </View>
       );
     },
     Footer: () => {
-      const year = new Date().getFullYear();
       return (
         <View textAlign="center" padding={tokens.space.large}>
-          <Text color={tokens.colors.neutral[80]}>
-            &copy; {year} QUACK-TEAL.COM All Rights Reserved
-          </Text>
+          <QuackCopyright />
         </View>
       );
     },
@@ -257,6 +258,7 @@ export default function App() {
       },
     },
   };
+
   const services = {
     async validateCustomSignUp(formData: any, _: any) {
       if (!formData.acknowledgement) {
@@ -351,6 +353,7 @@ export default function App() {
           <main>
             <h1>Hello {user?.username}</h1>
             <button onClick={signOut}>サインアウト</button>
+            {children}
           </main>
         )}
       </Authenticator>
