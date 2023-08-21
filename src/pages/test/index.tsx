@@ -83,7 +83,7 @@ export default function App() {
               Quack Training Noteのアカウントを作成します
             </Text>
             <Text padding={`0 0 0 ${tokens.space.xl}`}>
-              <Link fontWeight={tokens.borderWidths.large} href="#">
+              <Link color={tokens.colors.blue["80"]} textDecoration="underline" href="#">
                 利用規約
               </Link>
               をお読みください
