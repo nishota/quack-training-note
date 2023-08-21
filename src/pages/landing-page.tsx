@@ -63,7 +63,7 @@ export default function LandingPage() {
               <div className="px-6 py-12 md:px-12">
                 <h2 className="mb-6 text-3xl font-bold">
                   <span className="text-danger dark:text-danger-500">
-                    "Spicy life"
+                    Spicy life
                   </span>{" "}
                   project
                 </h2>
