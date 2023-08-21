@@ -1,5 +1,6 @@
 import QuackCopyright from "../component/quack-copyright";
 import QuackLogo from "../component/quack-logo";
+import Image from "next/image";
 
 export default function LandingPage() {
   return (
@@ -50,10 +51,12 @@ export default function LandingPage() {
         <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
           <div className="flex flex-wrap items-center">
             <div className="block w-full shrink-0 grow-0 basis-auto md:w-4/12 lg:flex">
-              <img
+              <Image
                 src="https://mdbcdn.b-cdn.net/img/new/ecommerce/vertical/097.jpg"
                 alt="Trendy Pants and Shoes"
                 className="w-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg"
+                width={100}
+                height={100}
               />
             </div>
             <div className="w-full shrink-0 grow-0 basis-auto md:w-8/12">
@@ -87,9 +90,12 @@ export default function LandingPage() {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  <img
+                  <Image
                     src="https://mdbcdn.b-cdn.net/img/new/standard/city/002.webp"
                     className="w-full"
+                    alt=""
+                    width={100}
+                    height={100}
                   />
                   <a href="#!">
                     <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -118,9 +124,12 @@ export default function LandingPage() {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  <img
+                  <Image
                     src="https://mdbcdn.b-cdn.net/img/new/standard/people/066.webp"
                     className="w-full"
+                    alt=""
+                    width={100}
+                    height={100}
                   />
                   <a href="#!">
                     <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -151,9 +160,12 @@ export default function LandingPage() {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  <img
+                  <Image
                     src="https://mdbcdn.b-cdn.net/img/new/standard/people/191.webp"
                     className="w-full"
+                    alt=""
+                    width={100}
+                    height={100}
                   />
                   <a href="#!">
                     <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
