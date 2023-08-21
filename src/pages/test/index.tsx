@@ -18,17 +18,7 @@ import {
 import { I18n } from "aws-amplify";
 import { translations } from "@aws-amplify/ui-react";
 I18n.putVocabularies(translations);
-I18n.setLanguage("jp");
-
-I18n.putVocabularies({
-  jp: {
-    "Sign In": "サインイン",
-    "Sign in": "サインイン",
-    "Create Account": "サインアップ",
-    "Send code": "認証コード送信",
-    "Back to Sign In": "サインインへ戻る"
-  },
-});
+I18n.setLanguage("ja");
 
 import awsExports from "../../aws-exports";
 Amplify.configure(awsExports);
@@ -60,9 +50,7 @@ export default function App() {
     SignIn: {
       Header: () => {
         return (
-          <Text
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-          >
+          <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
             Quack Training Noteへサインインします
           </Text>
         );
@@ -70,12 +58,13 @@ export default function App() {
       Footer: () => {
         const { toResetPassword } = useAuthenticator();
         return (
-          <View textAlign="center" className="pb-5">
+          <View textAlign="center" padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}>
             <Button
               fontWeight="normal"
               onClick={toResetPassword}
               size="small"
               variation="link"
+              isFullWidth={true}
             >
               パスワードを再設定する
             </Button>
@@ -90,7 +79,7 @@ export default function App() {
             padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
             level={3}
           >
-            Enter Information
+            Enter Information ConfirmSignIn
           </Heading>
         );
       },
@@ -98,9 +87,7 @@ export default function App() {
     SignUp: {
       Header: () => {
         return (
-          <Text
-            padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-          >
+          <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
             Quack Training Noteのアカウントを作成します
           </Text>
         );
@@ -108,12 +95,13 @@ export default function App() {
       Footer: () => {
         const { toSignIn } = useAuthenticator();
         return (
-          <View textAlign="center" className="pb-5">
+          <View textAlign="center" padding={`0 ${tokens.space.xl} ${tokens.space.xl} ${tokens.space.xl}`}>
             <Button
               fontWeight="normal"
               onClick={toSignIn}
               size="small"
               variation="link"
+              isFullWidth={true}
             >
               サインインへ戻る
             </Button>
@@ -144,7 +132,7 @@ export default function App() {
             padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
             level={3}
           >
-            Enter Information
+            Enter Information ConfirmSignUp
           </Heading>
         );
       },
@@ -160,10 +148,8 @@ export default function App() {
             >
               パスワード再設定
             </Heading>
-            <Text>
-              <span>入力したメールアドレスへ</span>
-              認証コードが送付されます
-            </Text>
+            <Text>ユーザー名を入力してください</Text>
+            <Text>登録したメールアドレスへ 認証コードが送付されます</Text>
           </>
         );
       },
@@ -179,25 +165,9 @@ export default function App() {
               パスワード再設定
             </Heading>
             <Text>
-              <span>入力したメールアドレスへ</span>
-              送付された認証コードを入力してください
+              登録したメールアドレスへ 送付された認証コードを入力してください
             </Text>
           </>
-        );
-      },
-      Footer: () => {
-        const { resendCode } = useAuthenticator();
-        return (
-          <View textAlign="center" className="pb-5">
-            <Button
-              fontWeight="normal"
-              onClick={resendCode}
-              size="small"
-              variation="link"
-            >
-              認証コードを再送します
-            </Button>
-          </View>
         );
       },
     },
@@ -240,7 +210,7 @@ export default function App() {
       confirm_password: {
         labelHidden: true,
         placeholder: "同じパスワードを入力してください",
-        isRequired: true,
+        isRequired: false,
         order: 4,
       },
     },
@@ -254,7 +224,7 @@ export default function App() {
     resetPassword: {
       username: {
         labelHidden: true,
-        placeholder: "メールアドレス",
+        placeholder: "ユーザー名",
         isRequired: true,
       },
     },
@@ -263,14 +233,22 @@ export default function App() {
         labelHidden: true,
         placeholder: "認証コードを入力してください",
         isRequired: true,
+        order: 1,
+      },
+      new_password: {
+        labelHidden: true,
+        placeholder: "パスワード",
+        isRequired: true,
+        order: 2,
       },
       confirm_password: {
         labelHidden: true,
         placeholder: "パスワードを入力してください",
-        isRequired: true,
+        isRequired: false,
+        order: 3,
       },
     },
-    confirmSignIn: {
+    confirmSignUp: {
       confirmation_code: {
         labelHidden: true,
         placeholder: "認証コードを入力してください",
