@@ -1,4 +1,5 @@
 // TODO: 筋トレアプリ用のロゴを考える
+import { Flex } from "@aws-amplify/ui-react";
 import Image from "next/image"
 
 type ImageProps = {
@@ -9,12 +10,14 @@ type ImageProps = {
 export default function QuackLogo(props: ImageProps) {
   const { width, height } = props;
   return (
-    <Image
-      src="/kamo_colorful.png"
-      alt="Quack Logo"
-      width={width}
-      height={height}
-      priority
-    />
+    <Flex>
+      <Image
+        src="https://contents.quack-teal.com/img/kamo_colorful.png"
+        alt="Quack Logo"
+        width={width}
+        height={height}
+        priority
+      />
+    </Flex>
   );
 }
