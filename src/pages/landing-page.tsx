@@ -1,19 +1,6 @@
 import QuackCopyright from "../component/quack-copyright";
 import QuackLogo from "../component/quack-logo";
 import Image from "next/image";
-import {
-  Authenticator,
-  View,
-  Text,
-  Link,
-  Heading,
-  Button,
-  CheckboxField,
-  Theme,
-  ThemeProvider,
-  useTheme,
-  useAuthenticator,
-} from "@aws-amplify/ui-react";
 
 export default function LandingPage() {
   return (
