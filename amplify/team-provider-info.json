@@ -1,37 +1,19 @@
 {
-  "staging": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-amplify73eda6448bc04-staging-115033-authRole",
-      "UnauthRoleArn": "arn:aws:iam::707727947258:role/amplify-amplify73eda6448bc04-staging-115033-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::707727947258:role/amplify-amplify73eda6448bc04-staging-115033-authRole",
-      "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-amplify73eda6448bc04-staging-115033-deployment",
-      "UnauthRoleName": "amplify-amplify73eda6448bc04-staging-115033-unauthRole",
-      "StackName": "amplify-amplify73eda6448bc04-staging-115033",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:707727947258:stack/amplify-amplify73eda6448bc04-staging-115033/c3c00d20-4406-11ee-b5d5-0e1a5dd46cef",
-      "AmplifyAppId": "df6zlbjlsx2i1"
-    },
-    "categories": {
-      "auth": {
-        "quacktrainingnotebbda2941": {}
-      }
-    }
-  },
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-quacktrainingnote-dev-195711-authRole",
-      "UnauthRoleArn": "arn:aws:iam::707727947258:role/amplify-quacktrainingnote-dev-195711-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::707727947258:role/amplify-quacktrainingnote-dev-195711-authRole",
+      "AuthRoleName": "amplify-quacktrainingnote-dev-213152-authRole",
+      "UnauthRoleArn": "arn:aws:iam::707727947258:role/amplify-quacktrainingnote-dev-213152-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::707727947258:role/amplify-quacktrainingnote-dev-213152-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-quacktrainingnote-dev-195711-deployment",
-      "UnauthRoleName": "amplify-quacktrainingnote-dev-195711-unauthRole",
-      "StackName": "amplify-quacktrainingnote-dev-195711",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:707727947258:stack/amplify-quacktrainingnote-dev-195711/56d32f20-3f48-11ee-bddc-0e1e3384c0eb",
-      "AmplifyAppId": "df6zlbjlsx2i1"
+      "DeploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
+      "UnauthRoleName": "amplify-quacktrainingnote-dev-213152-unauthRole",
+      "StackName": "amplify-quacktrainingnote-dev-213152",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:707727947258:stack/amplify-quacktrainingnote-dev-213152/89b91ad0-440c-11ee-9d6c-0e7f6ea0e96d",
+      "AmplifyAppId": "d2gih98b97eanj"
     },
     "categories": {
       "auth": {
-        "quacktrainingnotec3f6014c": {}
+        "quacktrainingnote48f0849b": {}
       }
     }
   }
