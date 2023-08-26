@@ -53,7 +53,7 @@ export default function QuackAuthenticator({ children }: SignProps) {
       Header: () => {
         return (
           <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
-            Quack Training Noteへサインインします
+            サインインします
           </Text>
         );
       },
@@ -82,7 +82,7 @@ export default function QuackAuthenticator({ children }: SignProps) {
         return (
           <>
             <Text padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}>
-              Quack Training Noteのアカウントを作成します
+              アカウントを作成します
             </Text>
             <Text padding={`0 0 0 ${tokens.space.xl}`}>
               <Link color={tokens.colors.blue["80"]} textDecoration="underline" href="#">
