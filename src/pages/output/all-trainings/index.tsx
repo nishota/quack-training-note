@@ -1,5 +1,5 @@
-import QuackMenu from "@/component/quack-menu";
-import { Table, TableData } from "../component/training-table";
+import QuackMenu from "@/components/quack-menu";
+import { Table, TableData } from "@/components/training-table";
 
 const dataFromServer: TableData = [
    {
@@ -27,7 +27,6 @@ const dataFromServer: TableData = [
 export default function AllTrainings() {
    return (
       <>
-         <QuackMenu />
          <div className="container">
             <div className="flex flex-wrap mx-4">
                <div className="w-full">

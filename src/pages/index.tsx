@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import QuackAuthenticator from "@/component/quack-authenticator";
+import QuackAuthenticator from "@/components/quack-authenticator";
 
 const inter = Inter({ subsets: ["latin"] });
 

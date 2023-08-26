@@ -1,5 +1,5 @@
-import QuackCopyright from "../component/quack-copyright";
-import QuackLogo from "../component/quack-logo";
+import QuackCopyright from "../components/quack-copyright";
+import QuackLogo from "../components/quack-logo";
 import Image from "next/image";
 
 export default function LandingPage() {
