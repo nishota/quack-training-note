@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'mdbcdn.b-cdn.net',
+        hostname: 'contents.quack-teal.com',
         port: '',
         pathname: '/img/**',
       },

@@ -17,6 +17,7 @@ import { I18n } from "aws-amplify";
 import { translations } from "@aws-amplify/ui-react";
 import QuackCopyright from "./quack-copyright";
 import QuackLogo from "./quack-logo";
+import { formFields, services } from "./quack-authenticator-parameter";
 
 import awsExports from "../aws-exports";
 Amplify.configure(awsExports);
@@ -30,7 +31,7 @@ type SignProps = {
   children: ReactNode
 }
 
-export default function QuackAuthenticator({children}: SignProps) {
+export default function QuackAuthenticator({ children }: SignProps) {
   const { tokens } = useTheme();
 
   const components = {
@@ -175,121 +176,6 @@ export default function QuackAuthenticator({children}: SignProps) {
     },
   };
 
-  const formFields = {
-    signIn: {
-      username: {
-        labelHidden: true,
-        placeholder: "ユーザー名",
-        order: 1,
-        isRequired: true,
-      },
-      password: {
-        labelHidden: true,
-        placeholder: "パスワード",
-        order: 2,
-        isRequired: true,
-      },
-    },
-    signUp: {
-      username: {
-        labelHidden: true,
-        placeholder: "ユーザー名",
-        order: 1,
-        isRequired: true,
-      },
-      email: {
-        labelHidden: true,
-        placeholder: "メールアドレス",
-        order: 2,
-        isRequired: true,
-      },
-      password: {
-        labelHidden: true,
-        placeholder: "パスワード",
-        isRequired: true,
-        order: 3,
-      },
-      confirm_password: {
-        labelHidden: true,
-        placeholder: "同じパスワードを入力してください",
-        isRequired: false,
-        order: 4,
-      },
-    },
-    forceNewPassword: {
-      password: {
-        labelHidden: true,
-        placeholder: "パスワード",
-        isRequired: true,
-      },
-    },
-    resetPassword: {
-      username: {
-        labelHidden: true,
-        placeholder: "ユーザー名",
-        isRequired: true,
-      },
-    },
-    confirmResetPassword: {
-      confirmation_code: {
-        labelHidden: true,
-        placeholder: "認証コードを入力してください",
-        isRequired: true,
-        order: 1,
-      },
-      new_password: {
-        labelHidden: true,
-        placeholder: "パスワード",
-        isRequired: true,
-        order: 2,
-      },
-      confirm_password: {
-        labelHidden: true,
-        placeholder: "パスワードを入力してください",
-        isRequired: false,
-        order: 3,
-      },
-    },
-    confirmSignUp: {
-      confirmation_code: {
-        labelHidden: true,
-        placeholder: "認証コードを入力してください",
-        isRequired: true,
-      },
-    },
-  };
-
-  const services = {
-    async validateCustomSignUp(formData: any, _: any) {
-      if (!formData.acknowledgement) {
-        return {
-          acknowledgement: "利用規約への同意をお願いいたします",
-        };
-      }
-    },
-    async validateFormPassword(formData: any) {
-      if (!formData.acknowledgement) {
-        return {
-          acknowledgement: "誤ったパスワードが入力されました",
-        };
-      }
-    },
-    async validateConfirmPassword(formData: any) {
-      if (!formData.acknowledgement) {
-        return {
-          acknowledgement: "誤ったパスワードが入力されました",
-        };
-      }
-    },
-    async validatePreferredUsername(formData: any) {
-      if (!formData.acknowledgement) {
-        return {
-          acknowledgement: "誤ったユーザ名が入力されました",
-        };
-      }
-    },
-  };
-
   const theme: Theme = {
     name: "Auth Theme",
     tokens: {
@@ -351,8 +237,38 @@ export default function QuackAuthenticator({children}: SignProps) {
       >
         {({ signOut, user }) => (
           <main>
-            <h1>Hello {user?.username}</h1>
-            <button onClick={signOut}>サインアウト</button>
+            <nav
+              className="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30 lg:flex-wrap lg:justify-start"
+              data-te-navbar-ref
+            >
+              <div className="flex w-full flex-wrap items-center justify-between px-6">
+                <div className="flex items-center">
+                  <a className="text-primary dark:text-primary-400" href="#!">
+                    <QuackLogo width={100} height={24} />
+                  </a>
+                </div>
+                <div className="my-1 flex items-center lg:my-0 lg:ml-auto">
+                  <div
+                    className="inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                  >
+                    <h1>Hello {user?.username}</h1>
+                  </div>
+                </div>
+                <div className="my-1 flex items-center lg:my-0 lg:ml-auto">
+                  <button
+                    type="button"
+                    className="inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                    onClick={signOut}
+                  >
+                    Signout
+                  </button>
+                </div>
+              </div>
+            </nav>
             {children}
           </main>
         )}
