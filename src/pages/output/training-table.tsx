@@ -1,8 +1,8 @@
 import { ReactNode } from "react"
 import { TableData, TdProps, ThProps } from "./training-table-type"
 
-const ThClassName = (className: string = ""): string => `w-1/6 min-w-[160px] text-md font-semibold text-white py-4 lg:py-7 px-3 lg:px-4 ${className}`
-const TdClassName = (className: string = ""): string => `text-center font-light text-white py-2 px-2 bg-black border-b border-[#E8E8E8] ${className}`
+const ThClassName = (className: string = ""): string => `w-1/6 min-w-[100px] text-md font-semibold text-white p-2 lg:p-4 px-2 ${className}`
+const TdClassName = (className: string = ""): string => `text-center font-light text-white p-1 bg-black border-b border-[#E8E8E8] ${className}`
 const Th: React.FC<ThProps> = ({ header }): ReactNode => (
    <th className={ThClassName("border-b border-t border-[#E8E8E8]")}>
       {header}
@@ -27,10 +27,8 @@ const TableRow: React.FC<{ data: string[][] }> = ({ data }): ReactNode =>
 
 export const Table: React.FC<TableData> = (data): ReactNode =>
    data.map(item => (
-      <div key={item.key} className="max-w-full overflow-x-auto">
-         <div className="p-4">
-            <p className="text-white text-lg font-semibold py-4 lg:py-7 px-3 lg:px-4">{item.label}</p>
-         </div>
+      <div key={item.key} className="max-w-full overflow-x-auto pb-3">
+         <p className="text-white text-lg font-semibold p-3 lg:p-5">{item.label}</p>
          <table className="table-auto w-full">
             <thead>
                {TableHeader(item)}

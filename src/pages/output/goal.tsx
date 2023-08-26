@@ -17,8 +17,8 @@ const dataFromServer: TableData = [
 // TODO: サーバからデータを取ってくる
 export default function Goal() {
   return (
-    <div className="container p-5">
-       <div className="flex flex-wrap -mx-4">
+    <div className="container">
+       <div className="flex flex-wrap mx-4">
           <div className="w-full">
              {Table(dataFromServer)}
           </div>
