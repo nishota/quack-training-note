@@ -1,5 +1,6 @@
 import QuackMenu from "@/component/quack-menu";
-import { Table, TableData } from "../../component/table/training-table";
+import { Table, TableData } from "./table/training-table";
+import { View } from "@aws-amplify/ui-react";
 
 const dataFromServer: TableData = [
    {
@@ -28,13 +29,13 @@ export default function AllTrainings() {
    return (
       <>
          <QuackMenu />
-         <div className="container">
-            <div className="flex flex-wrap mx-4">
-               <div className="w-full">
-                  {Table(dataFromServer)}
+            <div className="container">
+               <div className="flex flex-wrap mx-4">
+                  <div className="w-full">
+                     {Table(dataFromServer)}
+                  </div>
                </div>
             </div>
-         </div>
       </>
    );
 }
