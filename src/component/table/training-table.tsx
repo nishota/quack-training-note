@@ -1,6 +1,21 @@
 import { ReactNode } from "react"
-import { TableData, TableItem, TdProps, ThProps } from "./training-table-type"
 import { useRouter } from "next/router"
+
+export type TableItem = {
+   key: string
+   label: string
+   headers: string[]
+   data: { key: string, values: string[] }[]
+}
+
+export type TableData = TableItem[]
+
+export type ThProps = {
+   header: string
+}
+export type TdProps = {
+   data: string
+}
 
 const ThClassName = (className: string = ""): string => `w-1/6 min-w-[100px] text-md font-semibold text-white p-2 lg:p-4 px-2 ${className}`
 const TdClassName = (className: string = ""): string => `text-center font-light text-white p-1 bg-black border-b border-[#E8E8E8] ${className}`

@@ -1,6 +1,5 @@
 // TODO: なぜか背景色がしていできない
-import { Table } from "./training-table";
-import { TableData } from "./training-table-type";
+import { Table, TableData } from "../../component/table/training-table";
 
 const dataFromServer: TableData = [
    {
