@@ -1,8 +1,8 @@
 export type TableItem = {
-    key: number
+    key: string
     label: string
     headers: string[]
-    data: string[][]
+    data: { key: string, values: string[] }[]
 }
 
 export type TableData = TableItem[]
