@@ -1,10 +1,5 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "alltrainings": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
     "api366a99ee": {
       "ApiId": "string",
       "ApiName": "string",
@@ -16,26 +11,6 @@ export type AmplifyDependentResourcesAttributes = {
       "RootUrl": "string"
     },
     "apib30f9ac9": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
-    "quacktraininggoal": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
-    "quacktrainingnote": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
-    "quacktrainingtoday": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
-    "traininggoal": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"

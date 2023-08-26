@@ -9,16 +9,31 @@
       "UnauthRoleName": "amplify-quacktrainingnote-dev-213152-unauthRole",
       "StackName": "amplify-quacktrainingnote-dev-213152",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:707727947258:stack/amplify-quacktrainingnote-dev-213152/89b91ad0-440c-11ee-9d6c-0e7f6ea0e96d",
-      "AmplifyAppId": "d2gih98b97eanj"
+      "AmplifyAppId": "d2gih98b97eanj",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-quacktrainingnote-dev-213152-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "quacktrainingnote48f0849b": {}
       },
       "function": {
-        "quacktrainingnotecdc2dd44": {},
-        "quacktrainingnotee8b8d446": {},
-        "quacktrainingnote5f676da2": {}
+        "quacktrainingnotecdc2dd44": {
+          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
+          "s3Key": "amplify-builds/quacktrainingnotecdc2dd44-48444a38694c4975426a-build.zip"
+        },
+        "quacktrainingnotee8b8d446": {
+          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
+          "s3Key": "amplify-builds/quacktrainingnotee8b8d446-574e362f2f457a306854-build.zip"
+        },
+        "quacktrainingnote5f676da2": {
+          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
+          "s3Key": "amplify-builds/quacktrainingnote5f676da2-47622b46304b56635879-build.zip"
+        }
+      },
+      "api": {
+        "api6a6cfe54": {},
+        "apib30f9ac9": {},
+        "api366a99ee": {}
       }
     }
   }
