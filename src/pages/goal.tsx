@@ -1,4 +1,4 @@
-import { Table, TableData } from "../../component/training-table";
+import { Table, TableData } from "../component/training-table";
 
 const dataFromServer: TableData = [
   {

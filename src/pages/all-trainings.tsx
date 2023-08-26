@@ -1,6 +1,5 @@
 import QuackMenu from "@/component/quack-menu";
-import { Table, TableData } from "../../component/training-table";
-import { View } from "@aws-amplify/ui-react";
+import { Table, TableData } from "../component/training-table";
 
 const dataFromServer: TableData = [
    {
