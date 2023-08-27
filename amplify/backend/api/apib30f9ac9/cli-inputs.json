@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/trainings/today": {
+      "name": "/trainings/today",
+      "lambdaFunction": "quacktrainingnotee8b8d446",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
+    }
+  }
+}
