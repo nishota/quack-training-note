@@ -2,7 +2,7 @@ import QuackCopyright from "../components/quack-copyright";
 import QuackLogo from "../components/quack-logo";
 import Image from "next/image";
 
-export default function LandingPage() {
+export default function Usage() {
   return (
     <main>
       <section className="mb-5">
