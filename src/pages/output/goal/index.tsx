@@ -1,4 +1,4 @@
-import { Table, TableData } from "@/components/training-table";
+import { Tables, TableData } from "@/components/training-table";
 
 const dataFromServer: TableData = [
   {
@@ -16,12 +16,6 @@ const dataFromServer: TableData = [
 // TODO: サーバからデータを取ってくる
 export default function Goal() {
   return (
-    <div className="container">
-      <div className="flex flex-wrap mx-4">
-        <div className="w-full">
-          {Table(dataFromServer)}
-        </div>
-      </div>
-    </div>
+    <Tables values={dataFromServer}></Tables>
   );
 }

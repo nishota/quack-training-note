@@ -243,7 +243,7 @@ export default function QuackAuthenticator({ children }: SignProps) {
             >
               <div className="flex w-full flex-wrap items-center justify-between px-6">
                 <div className="flex items-center">
-                  <a className="text-primary dark:text-primary-400" href="#!">
+                  <a className="text-primary dark:text-primary-400" href="/">
                     <QuackLogo width={100} height={24} />
                   </a>
                 </div>
@@ -253,7 +253,7 @@ export default function QuackAuthenticator({ children }: SignProps) {
                     data-te-ripple-init
                     data-te-ripple-color="light"
                   >
-                    <h1>Hello {user?.username}</h1>
+                    <h1>Hi, {user?.username}!</h1>
                   </div>
                 </div>
                 <div className="my-1 flex items-center lg:my-0 lg:ml-auto">
