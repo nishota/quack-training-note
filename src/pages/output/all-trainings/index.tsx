@@ -33,6 +33,7 @@ const dataFromServer: TableData = [
    },
 ]
 // TODO: サーバからデータを取ってくる
+// TODO: 検索オプション(日付、種目)
 export default function AllTrainings() {
    return (
       <Tables values={dataFromServer}></Tables>

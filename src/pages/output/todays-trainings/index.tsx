@@ -24,6 +24,7 @@ const dataFromServer: TableData = [
    },
 ]
 // TODO: サーバからデータを取ってくる
+// TODO: AllTrainingと同じで日付指定する
 export default function TodaysTrainings() {
    return (
       <Tables values={dataFromServer}></Tables>

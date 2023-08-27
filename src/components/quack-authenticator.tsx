@@ -1,10 +1,11 @@
-import "@aws-amplify/ui-react/styles.css";
-import { Amplify } from "aws-amplify";
+import "@aws-amplify/ui-react/styles.css"
+import Link from "next/link"
+import { ReactNode } from "react";
+import { Amplify, I18n } from "aws-amplify"
 import {
   Authenticator,
   View,
   Text,
-  Link,
   Heading,
   Button,
   CheckboxField,
@@ -12,20 +13,18 @@ import {
   ThemeProvider,
   useTheme,
   useAuthenticator,
-} from "@aws-amplify/ui-react";
-import { I18n } from "aws-amplify";
-import { translations } from "@aws-amplify/ui-react";
-import QuackCopyright from "./quack-copyright";
-import QuackLogo from "./quack-logo";
-import { formFields, services } from "./quack-authenticator-parameter";
+  translations
+} from "@aws-amplify/ui-react"
+import QuackCopyright from "./quack-copyright"
+import QuackLogo from "./quack-logo"
+import { formFields, services } from "./quack-authenticator-parameter"
+import awsExports from "../aws-exports"
 
-import awsExports from "../aws-exports";
 Amplify.configure(awsExports);
 
 I18n.putVocabularies(translations);
 I18n.setLanguage("ja");
 
-import { ReactNode } from "react";
 
 type SignProps = {
   children: ReactNode
@@ -85,7 +84,7 @@ export default function QuackAuthenticator({ children }: SignProps) {
               アカウントを作成します
             </Text>
             <Text padding={`0 0 0 ${tokens.space.xl}`}>
-              <Link color={tokens.colors.blue["80"]} textDecoration="underline" href="#">
+              <Link className="text-blue-800 underline" href="/">
                 利用規約
               </Link>
               をお読みください
@@ -243,9 +242,9 @@ export default function QuackAuthenticator({ children }: SignProps) {
             >
               <div className="flex w-full flex-wrap items-center justify-between px-6">
                 <div className="flex items-center">
-                  <a className="text-primary dark:text-primary-400" href="/">
+                  <Link className="text-primary dark:text-primary-400" href="/">
                     <QuackLogo width={100} height={24} />
-                  </a>
+                  </Link>
                 </div>
                 <div className="my-1 flex items-center lg:my-0 lg:ml-auto">
                   <div
