@@ -17,23 +17,7 @@
         "quacktrainingnote48f0849b": {}
       },
       "function": {
-        "quacktrainingnotecdc2dd44": {
-          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
-          "s3Key": "amplify-builds/quacktrainingnotecdc2dd44-48444a38694c4975426a-build.zip"
-        },
-        "quacktrainingnotee8b8d446": {
-          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
-          "s3Key": "amplify-builds/quacktrainingnotee8b8d446-574e362f2f457a306854-build.zip"
-        },
-        "quacktrainingnote5f676da2": {
-          "deploymentBucketName": "amplify-quacktrainingnote-dev-213152-deployment",
-          "s3Key": "amplify-builds/quacktrainingnote5f676da2-47622b46304b56635879-build.zip"
-        }
-      },
-      "api": {
-        "api6a6cfe54": {},
-        "apib30f9ac9": {},
-        "api366a99ee": {}
+        "quacktrainingnotecadc5509": {}
       }
     }
   }

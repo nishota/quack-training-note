@@ -1,0 +1,23 @@
+type Training @model @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  Type: String!
+  Name: String!
+  trainingdatas: [TrainingData] @manyToMany(relationName: "TrainingDataTraining")
+}
+
+type UserTrainingData @model @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  UserName: String!
+  TrainingDataId: [ID]
+  TrainingData: [TrainingData] @hasMany(indexName: "byUserTrainingData", fields: ["id"])
+}
+
+type TrainingData @model @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  TrainingId: ID!
+  Count: Int!
+  Weight: Float!
+  At: AWSDateTime!
+  usertrainingdataID: ID! @index(name: "byUserTrainingData")
+  Trainings: [Training] @manyToMany(relationName: "TrainingDataTraining")
+}
